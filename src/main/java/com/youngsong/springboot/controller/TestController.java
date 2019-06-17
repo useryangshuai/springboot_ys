@@ -17,5 +17,12 @@ public class TestController {
         String name = (String) redisUtil.get("name");
         return name;
     }
+    @RequestMapping("/world")
+    @ResponseBody
+    public String world() {
+        redisUtil.set("age","13");
+        String age = (String) redisUtil.get("age");
+        return age;
+    }
 
 }
